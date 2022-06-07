@@ -10,3 +10,6 @@ eureka:
     fetchRegistry: false  # 我们注册中心不需要自己获取服务注册列表
     service-url:
       defaultZone: http://eureka7002.com:7002/eureka  #注册中心地址,被Eureka-client使用的。20220522：eureka的访问地址
+#server:
+      ##    enable-self-preservation: false
+      ##    eviction-interval-timer-in-ms: 2000
