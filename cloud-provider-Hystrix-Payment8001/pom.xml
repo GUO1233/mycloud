@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-hystrix-payment8001</artifactId>
-
+    <artifactId>cloud-provider-Hystrix-Payment8001</artifactId>
     <dependencies>
         <!--新增hystrix-->
         <dependency>
@@ -51,5 +50,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 
 </project>
