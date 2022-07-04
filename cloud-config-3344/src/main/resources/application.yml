@@ -8,10 +8,10 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:GUO1233/springcloud-config.git #GitHub上面的git仓库名字
+          uri: https://gitee.com/gyfsowhate/springcloud-config.git #GitHub上面的git仓库名字
           search-paths: #搜索目录
             - springcloud-config
-      label: main #读取分支
+      label: master #读取分支
       #启动成功后访问的路径 http://ip:3344/{label}/{application}-{profile}.yml 能访问的配置文件 就表示成功了
 
 eureka:
