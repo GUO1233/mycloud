@@ -2,9 +2,11 @@ package com.guoyf.springcloud.alibaba.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.guoyf.springcloud.alibaba.service.PaymentFeignService;
 import com.guoyf.springcloud.entities.CommonResult;
 import com.guoyf.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +22,10 @@ public class CircleBreakerController {
 
     @Resource
     private RestTemplate restTemplate;
+
+    @Resource
+    private PaymentFeignService paymentService;
+
 
     @RequestMapping("/consumer/fallback/{id}")
     //@SentinelResource(value = "fallback") //没有配置
@@ -49,6 +55,11 @@ public class CircleBreakerController {
         return new CommonResult<Payment>(445,"blockHandler-sentinel限流,无此流水: blockException  "+blockException.getMessage(),payment);
     }
 
+
+    @GetMapping(value = "/consumer/paymentSQL/{id}")
+    public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id) {
+        return paymentService.paymentSQL(id);
+    }
 
 
 
