@@ -3012,6 +3012,7 @@ INSERT INTO t_account(id, user_id, total, used, residue) VALUES(1,1,1000,0,1000)
 **注意==每个库都要执行一次==这个sql,生成回滚日志表**
 
 4. ==每个业务都创建一个微服务,也就是要有三个微服务,订单,库存,账号==
+5. ![image-20221013213246837](C:\Users\28331\AppData\Roaming\Typora\typora-user-images\image-20221013213246837.png)
 
  ==订单==,seta-order-2001
 
@@ -3059,6 +3060,8 @@ INSERT INTO t_account(id, user_id, total, used, residue) VALUES(1,1,1000,0,1000)
     ```
 
     还要额外创建其他配置文件,创建一个file.conf:
+
+    ![image-20221013212546641](C:\Users\28331\AppData\Roaming\Typora\typora-user-images\image-20221013212546641.png)
 
      ```.conf
     transport {
